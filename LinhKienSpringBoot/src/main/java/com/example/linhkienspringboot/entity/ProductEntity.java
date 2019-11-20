@@ -50,18 +50,20 @@ public class ProductEntity extends ParentEntity {
 	@OneToMany(mappedBy = "productComment")
 	private List<CommentEntity> comment  = new ArrayList<>();
 
-	// getter/setter
-	public String getTitle() {
-		return title;
-	}
-
 	@OneToOne(mappedBy = "productEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
 	private ProductDetailsEntity productDetails;
 	
 	@ManyToOne
 	@JoinColumn(name = "orderdetail_id")
-	private OrderDetailEntity orderDetail;
+	private OrderDetailEntity orDetailEntity;
+	
 
+	// getter/setter
+	public String getTitle() {
+		return title;
+	}
+
+	
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -146,14 +148,13 @@ public class ProductEntity extends ParentEntity {
 		this.comment = comment;
 	}
 
-	public OrderDetailEntity getOrderDetail() {
-		return orderDetail;
+	public OrderDetailEntity getOrDetailEntity() {
+		return orDetailEntity;
 	}
 
-	public void setOrderDetail(OrderDetailEntity orderDetail) {
-		this.orderDetail = orderDetail;
+	public void setOrDetailEntity(OrderDetailEntity orDetailEntity) {
+		this.orDetailEntity = orDetailEntity;
 	}
+	
 
-	
-	
 }
