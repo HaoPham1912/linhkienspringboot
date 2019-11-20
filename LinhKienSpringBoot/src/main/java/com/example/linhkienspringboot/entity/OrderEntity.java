@@ -26,10 +26,11 @@ public class OrderEntity extends ParentEntity{
 	
 	@ManyToOne()
 	@JoinColumn(name = "customer_id")
-	private CustomerEntity customer;
+	private CustomerEntity customerOrder;
 	
-	@OneToMany(mappedBy = "orderFK")
-	private List<OrderDetailEntity> orderDetails = new ArrayList<>();
+	@OneToMany(mappedBy = "orderEntity")
+	private List<OrderDetailEntity> orderDetailEntity = new ArrayList<>();
+	
 
 	public String getShipAddress() {
 		return shipAddress;
@@ -55,21 +56,21 @@ public class OrderEntity extends ParentEntity{
 		this.orderStatus = orderStatus;
 	}
 
-	public CustomerEntity getCustomer() {
-		return customer;
+
+	public List<OrderDetailEntity> getOrderDetailEntity() {
+		return orderDetailEntity;
 	}
 
-	public void setCustomer(CustomerEntity customer) {
-		this.customer = customer;
+	public void setOrderDetailEntity(List<OrderDetailEntity> orderDetailEntity) {
+		this.orderDetailEntity = orderDetailEntity;
 	}
 
-	public List<OrderDetailEntity> getOrderDetails() {
-		return orderDetails;
+	public CustomerEntity getCustomerOrder() {
+		return customerOrder;
 	}
 
-	public void setOrderDetails(List<OrderDetailEntity> orderDetails) {
-		this.orderDetails = orderDetails;
+	public void setCustomerOrder(CustomerEntity customerOrder) {
+		this.customerOrder = customerOrder;
 	}
-	
-	
+
 }

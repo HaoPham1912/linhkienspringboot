@@ -4,26 +4,30 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "accounts")
-public class AccountEntity extends ParentEntity{
-	
+public class AccountEntity extends ParentEntity {
+
 	@Column(name = "username")
 	private String userName;
-	
+
 	@Column(name = "password")
 	private String passWord;
-	
+
 	@Column(name = "status")
 	private Integer status;
 
 	@ManyToOne
-    @JoinColumn(name = "role_id")
-    private RoleEntity role;
+	@JoinColumn(name = "role_id")
+	private RoleEntity role;
 
-	//getter/setter
+	@OneToOne(mappedBy = "accountCustomer")
+	private CustomerEntity customerEntity;
+
+	// getter/setter
 	public String getUserName() {
 		return userName;
 	}
@@ -56,5 +60,12 @@ public class AccountEntity extends ParentEntity{
 		this.role = role;
 	}
 
-	
+	public CustomerEntity getCustomerEntity() {
+		return customerEntity;
+	}
+
+	public void setCustomerEntity(CustomerEntity customerEntity) {
+		this.customerEntity = customerEntity;
+	}
+
 }
