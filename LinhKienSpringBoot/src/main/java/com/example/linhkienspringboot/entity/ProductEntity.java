@@ -45,7 +45,7 @@ public class ProductEntity extends ParentEntity {
 	private BrandEntity brands;
 
 	@OneToMany(mappedBy = "product")
-	private List<ImgaeEntity> imageList = new ArrayList<>();
+	private List<ImageEntity> imageList = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "productComment")
 	private List<CommentEntity> comment  = new ArrayList<>();
@@ -124,11 +124,11 @@ public class ProductEntity extends ParentEntity {
 		this.brands = brands;
 	}
 
-	public List<ImgaeEntity> getImageList() {
+	public List<ImageEntity> getImageList() {
 		return imageList;
 	}
 
-	public void setImageList(List<ImgaeEntity> imageList) {
+	public void setImageList(List<ImageEntity> imageList) {
 		this.imageList = imageList;
 	}
 

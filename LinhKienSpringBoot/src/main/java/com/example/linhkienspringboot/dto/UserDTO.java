@@ -1,6 +1,6 @@
 package com.example.linhkienspringboot.dto;
 
-public class UserDTO {
+public class UserDTO extends ParentDTO{
 	
 	private String userName;
 	private String passWord;
