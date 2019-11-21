@@ -26,6 +26,9 @@ public class AccountEntity extends ParentEntity {
 
 	@OneToOne(mappedBy = "accountCustomer")
 	private CustomerEntity customerEntity;
+	
+	@OneToOne(mappedBy = "accountAdmin")
+	private AdminEntity adminEntity;
 
 	// getter/setter
 	public String getUserName() {
@@ -67,5 +70,14 @@ public class AccountEntity extends ParentEntity {
 	public void setCustomerEntity(CustomerEntity customerEntity) {
 		this.customerEntity = customerEntity;
 	}
+
+	public AdminEntity getAdminEntity() {
+		return adminEntity;
+	}
+
+	public void setAdminEntity(AdminEntity adminEntity) {
+		this.adminEntity = adminEntity;
+	}
+	
 
 }

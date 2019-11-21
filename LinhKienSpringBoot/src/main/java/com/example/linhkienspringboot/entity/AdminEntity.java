@@ -10,11 +10,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "customers")
-public class CustomerEntity extends ParentEntity {
-
+@Table(name = "admin")
+public class AdminEntity extends ParentEntity{
+	
 	@Column(name = "name")
 	private String name;
 
@@ -26,16 +25,16 @@ public class CustomerEntity extends ParentEntity {
 
 	@Column(name = "address")
 	private String address;
-
-	@OneToMany(mappedBy = "customerOrder")
-	private List<OrderEntity> orderList = new ArrayList<>();
-
-	@OneToMany(mappedBy = "customerComment")
-	private List<CommentEntity> comment = new ArrayList<>();
-
+	
 	@OneToOne
 	@JoinColumn(name = "account_id")
-	private AccountEntity accountCustomer;
+	private AccountEntity accountAdmin;
+
+	@OneToMany(mappedBy = "adminComment")
+	private List<CommentEntity> commentAdList = new ArrayList<CommentEntity>();
+	
+	//getter/ setter
+	
 	
 	public String getName() {
 		return name;
@@ -69,28 +68,21 @@ public class CustomerEntity extends ParentEntity {
 		this.address = address;
 	}
 
-	public List<OrderEntity> getOrderList() {
-		return orderList;
+	public AccountEntity getAccountAdmin() {
+		return accountAdmin;
 	}
 
-	public void setOrderList(List<OrderEntity> orderList) {
-		this.orderList = orderList;
+	public void setAccountAdmin(AccountEntity accountAdmin) {
+		this.accountAdmin = accountAdmin;
 	}
 
-	public List<CommentEntity> getComment() {
-		return comment;
+	public List<CommentEntity> getCommentAdList() {
+		return commentAdList;
 	}
 
-	public void setComment(List<CommentEntity> comment) {
-		this.comment = comment;
+	public void setCommentAdList(List<CommentEntity> commentAdList) {
+		this.commentAdList = commentAdList;
 	}
-
-	public AccountEntity getAccountCustomer() {
-		return accountCustomer;
-	}
-
-	public void setAccountCustomer(AccountEntity accountCustomer) {
-		this.accountCustomer = accountCustomer;
-	}
-
+	
+	
 }

@@ -26,6 +26,10 @@ public class CommentEntity extends ParentEntity{
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
 	private CustomerEntity customerComment;
+	
+	@ManyToOne
+	@JoinColumn(name = "admin_id")
+	private AdminEntity adminComment;
 
 	public String getContent() {
 		return content;
@@ -65,6 +69,14 @@ public class CommentEntity extends ParentEntity{
 
 	public void setCustomerComment(CustomerEntity customerComment) {
 		this.customerComment = customerComment;
+	}
+
+	public AdminEntity getAdminComment() {
+		return adminComment;
+	}
+
+	public void setAdminComment(AdminEntity adminComment) {
+		this.adminComment = adminComment;
 	}
 
 	
