@@ -18,8 +18,8 @@ public class RoleEntity extends ParentEntity{
 	@Column(name = "name")
 	private String name;
 
-	@OneToMany(mappedBy = "role")
-	private List<AccountEntity> account = new ArrayList<>();
+	@OneToMany(mappedBy = "roleEntity")
+	private List<UsersEntity> usersList = new ArrayList<UsersEntity>();
 	
 	public String getCode() {
 		return code;
@@ -37,14 +37,12 @@ public class RoleEntity extends ParentEntity{
 		this.name = name;
 	}
 
-	public List<AccountEntity> getAccount() {
-		return account;
+	public List<UsersEntity> getUsersList() {
+		return usersList;
 	}
 
-	public void setAccount(List<AccountEntity> account) {
-		this.account = account;
+	public void setUsersList(List<UsersEntity> usersList) {
+		this.usersList = usersList;
 	}
-
-	
 	
 }

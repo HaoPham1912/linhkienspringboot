@@ -24,12 +24,9 @@ public class CommentEntity extends ParentEntity{
 	private ProductEntity productComment;
 	
 	@ManyToOne
-	@JoinColumn(name = "customer_id")
-	private CustomerEntity customerComment;
+	@JoinColumn(name = "user_id")
+	private UsersEntity userComment;
 	
-	@ManyToOne
-	@JoinColumn(name = "admin_id")
-	private AdminEntity adminComment;
 
 	public String getContent() {
 		return content;
@@ -63,22 +60,12 @@ public class CommentEntity extends ParentEntity{
 		this.productComment = productComment;
 	}
 
-	public CustomerEntity getCustomerComment() {
-		return customerComment;
+	public UsersEntity getUserComment() {
+		return userComment;
 	}
 
-	public void setCustomerComment(CustomerEntity customerComment) {
-		this.customerComment = customerComment;
+	public void setUserComment(UsersEntity userComment) {
+		this.userComment = userComment;
 	}
 
-	public AdminEntity getAdminComment() {
-		return adminComment;
-	}
-
-	public void setAdminComment(AdminEntity adminComment) {
-		this.adminComment = adminComment;
-	}
-
-	
-	
 }
