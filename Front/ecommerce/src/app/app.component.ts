@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+// var json = require('./products.json');
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
