@@ -6,5 +6,5 @@ import com.example.linhkienspringboot.entity.ProductEntity;
 
 
 public interface ProductRepository extends JpaRepository<ProductEntity, Long>{
-
+	
 }
