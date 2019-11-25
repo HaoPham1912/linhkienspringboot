@@ -1,5 +1,7 @@
 package com.example.shoplinhkien.service;
 
-public interface IUserService {
+import com.example.shoplinhkien.dto.UsersDTO;
 
+public interface IUserService {
+	UsersDTO save(UsersDTO dto);
 }
