@@ -1,5 +1,8 @@
 package com.example.shoplinhkien.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +27,17 @@ public class CategoryService implements ICategoryService {
 		categoryEntity = converter.toEntity(categoryDTO);
 		categoryEntity = repository.save(categoryEntity);
 		return converter.toDto(categoryEntity);
+	}
+
+	@Override
+	public List<CategoryDTO> findAll() {
+		List<CategoryDTO> result = new ArrayList<CategoryDTO>();
+		List<CategoryEntity> entities = repository.findAll();
+		for(CategoryEntity entity: entities) {
+			CategoryDTO dto = converter.toDto(entity);
+			result.add(dto);
+		}
+		return result;
 	}
 
 }
