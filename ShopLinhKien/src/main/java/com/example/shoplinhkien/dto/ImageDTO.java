@@ -1,15 +1,10 @@
 package com.example.shoplinhkien.dto;
 
-public class ImageDTO{
-	private Long id;
+public class ImageDTO extends AbstractDTO<ImageDTO>{
+
 	private String name;
 	private Long product_id;
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getName() {
 		return name;
 	}

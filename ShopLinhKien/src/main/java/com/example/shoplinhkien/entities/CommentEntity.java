@@ -10,22 +10,22 @@ import javax.persistence.Table;
 @Table(name = "comments")
 public class CommentEntity extends ParentEntity {
 	
-	@Column(name = "title")
+	@Column(name = "title",nullable = false)
 	private String titleComment;
 	
-	@Column
+	@Column(nullable = false)
 	private String content;
 	
 	@Column
 	private Float rate;
 	
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "user_id",nullable = false)
 	private UsersEntity userComment;
 	
 	@ManyToOne
-	@JoinColumn(name = "product_id")
-	private ProductEntity productCommnent;
+	@JoinColumn(name = "product_id",nullable = false)
+	private ProductEntity productComment;
 
 	public String getTitleComment() {
 		return titleComment;
@@ -59,12 +59,11 @@ public class CommentEntity extends ParentEntity {
 		this.userComment = userComment;
 	}
 
-	public ProductEntity getProductCommnent() {
-		return productCommnent;
+	public ProductEntity getProductComment() {
+		return productComment;
 	}
 
-	public void setProductCommnent(ProductEntity productCommnent) {
-		this.productCommnent = productCommnent;
+	public void setProductent(ProductEntity productComment) {
+		this.productComment = productComment;
 	}
-	
 }

@@ -14,13 +14,13 @@ import javax.persistence.Table;
 @Table(name = "products")
 public class ProductEntity extends ParentEntity{
 	
-	@Column
+	@Column(nullable = false)
 	private String name;
 	
-	@Column
+	@Column(nullable = false)
 	private String brand;
 	
-	@Column
+	@Column(nullable = false)
 	private Double price;
 	
 	@Column
@@ -29,20 +29,20 @@ public class ProductEntity extends ParentEntity{
 	@Column
 	private String series;
 	
-	@Column
+	@Column(nullable = false)
 	private String warranty;
 	
 	@Column
 	private String color;
 	
-	@Column 
+	@Column(nullable = false)
 	private String decription;
 	
 	@Column
 	private Float rating;
 	
 	@ManyToOne
-	@JoinColumn(name = "category_id")
+	@JoinColumn(name = "category_id", nullable = false)
 	private CategoryEntity categoryEntity;
 
 	@OneToMany(mappedBy = "productEntity")
@@ -51,7 +51,7 @@ public class ProductEntity extends ParentEntity{
 	@OneToMany(mappedBy = "productOrDetail")
 	private List<OrderDetailEntity> orderDetailList = new ArrayList<OrderDetailEntity>();
 	
-	@OneToMany(mappedBy = "productCommnent")
+	@OneToMany(mappedBy = "productComment")
 	private List<CommentEntity> commentList = new ArrayList<CommentEntity>();
 	
 	public String getName() {

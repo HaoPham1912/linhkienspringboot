@@ -12,10 +12,10 @@ import javax.persistence.Table;
 @Table(name = "categories")
 public class CategoryEntity extends ParentEntity{
 	
-	@Column(name = "categoryname")
+	@Column(name = "categoryname",nullable = false,unique = true)
 	private String categoryName;
 	
-	@Column(name = "categorycode")
+	@Column(name = "categorycode",nullable = false, unique = true)
 	private String categoryCode;
 
 	@OneToMany(mappedBy = "categoryEntity")

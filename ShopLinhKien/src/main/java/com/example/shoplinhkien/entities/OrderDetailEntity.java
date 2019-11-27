@@ -10,15 +10,15 @@ import javax.persistence.Table;
 @Table(name = "orderdetails")
 public class OrderDetailEntity extends ParentEntity{
 	
-	@Column
+	@Column(nullable = false)
 	private Integer quantity;
 	
 	@ManyToOne
-	@JoinColumn(name = "order_id")
+	@JoinColumn(name = "order_id", nullable = false)
 	private OrderEntity orderEntity;
 	
 	@ManyToOne
-	@JoinColumn(name = "product_id")
+	@JoinColumn(name = "product_id", nullable = false)
 	private ProductEntity productOrDetail;
 
 	public Integer getQuantity() {

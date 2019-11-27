@@ -1,27 +1,29 @@
 package com.example.shoplinhkien.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class AbstractDTO<T> {
-	
-	private int id;
+
+	private Long id;
 	private String createdBy;
 	private Date createdDate;
 	private String modifiedBy;
 	private Date modifiedDate;
-	
-	/* private List<T> list = new ArrayList<>(); */
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	private List<T> list = new ArrayList<>();
 
 	public String getCreatedBy() {
 		return createdBy;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setCreatedBy(String createdBy) {
@@ -51,10 +53,13 @@ public class AbstractDTO<T> {
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
-	/*
-	 * public List<T> getList() { return list; }
-	 * 
-	 * public void setList(List<T> list) { this.list = list; }
-	 */
+
+	public List<T> getList() {
+		return list;
+	}
+
+	public void setList(List<T> list) {
+		this.list = list;
+	}
 	
 }

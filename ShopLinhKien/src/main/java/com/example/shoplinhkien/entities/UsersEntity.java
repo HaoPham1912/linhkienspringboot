@@ -14,30 +14,30 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 public class UsersEntity extends ParentEntity {
-	@Column(name = "username")
+	@Column(name = "username", unique = true, nullable = false)
 	private String userName;
 
-	@Column(name = "password")
+	@Column(name = "password",nullable = false)
 	private String passWord;
 
-	@Column(name = "status")
+	@Column(name = "status",nullable = false)
 	private Integer status;
 
-	@Column(name = "fullname")
+	@Column(name = "fullname",nullable = false)
 	private String fullName;
 
-	@Column(name = "email")
+	@Column(name = "email",nullable = false)
 	private String email;
 
-	@Column(name = "phone")
+	@Column(name = "phone",nullable = false)
 	private String phone;
 
-	@Column(name = "address")
+	@Column(name = "address",nullable = false)
 	private String address;
 
 
 	@ManyToOne
-	@JoinColumn(name = "role_id")
+	@JoinColumn(name = "role_id",nullable = false)
 	private RoleEntity roleEntity;
 	
 	@OneToMany(mappedBy = "usersEntity")

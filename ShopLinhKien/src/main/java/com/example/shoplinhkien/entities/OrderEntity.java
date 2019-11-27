@@ -15,23 +15,23 @@ import javax.persistence.Table;
 @Table(name = "orders")
 public class OrderEntity extends ParentEntity{
 	
-	@Column
+	@Column(nullable = false)
 	private String nameCustomer;
 	
-	@Column
+	@Column(nullable = false)
 	private String shipAddress;
 	
-	@Column
+	@Column(nullable = false)
 	private Date shipDate;
 	
-	@Column
+	@Column(nullable = false)
 	private Integer status;
 	
-	@Column
+	@Column(nullable = false)
 	private Double totalPrice;
 	
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "user_id",nullable = false)
 	private UsersEntity usersEntity;
 	
 	@OneToMany(mappedBy = "orderEntity")
