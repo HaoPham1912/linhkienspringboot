@@ -1465,6 +1465,12 @@ body {
   
   .product-preview img {
     width: 100%;
+    
+  }
+  
+  .product-thumb img {
+    width: 100%;
+    border: 1px dotted black;
   }
   
   /*----------------------------*\
@@ -2242,3 +2248,48 @@ body {
     border-bottom: 1px solid #E4E7ED;
     border-top: 1px solid #E4E7ED;
   }
+  .form-login {
+    text-align: center;
+    background-color: #15161D;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+    border: 4px dashed white;
+}
+.form-login input{
+  background-color: transparent;
+  border: 2px solid #cfcfcf;
+  color: #E4E7ED;
+  
+}
+.footer-form-login{
+ color: white;
+}
+.footer-form-login hr{
+  border: 1px solid rgb(182, 6, 6);
+}
+.footer-form-login a{
+  color: rgb(182, 6, 6);
+}
+.footer-form-login a:hover{
+  color: rgb(255, 17, 17);
+}
+
+.side-bar{
+  background: #252a44;
+  width: 20%;
+  min-height:100vh;
+  color: #cfcfcf;
+}
+
+
+
+
