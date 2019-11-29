@@ -1,8 +1,6 @@
 package com.example.shoplinhkien.dto;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class AbstractDTO<T> {
 
@@ -12,7 +10,7 @@ public class AbstractDTO<T> {
 	private String modifiedBy;
 	private Date modifiedDate;
 
-	private List<T> list = new ArrayList<>();
+//	private List<T> list = new ArrayList<>();
 
 	public String getCreatedBy() {
 		return createdBy;
@@ -54,12 +52,12 @@ public class AbstractDTO<T> {
 		this.modifiedDate = modifiedDate;
 	}
 
-	public List<T> getList() {
-		return list;
-	}
-
-	public void setList(List<T> list) {
-		this.list = list;
-	}
+//	public List<T> getList() {
+//		return list;
+//	}
+//
+//	public void setList(List<T> list) {
+//		this.list = list;
+//	}
 	
 }

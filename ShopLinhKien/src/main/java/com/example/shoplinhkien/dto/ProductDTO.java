@@ -10,7 +10,21 @@ public class ProductDTO extends AbstractDTO<ProductDTO>{
 	private String color;
 	private String description;
 	private Float rating;
+	private String categoryCode;
 	private Long category_id;
+	
+	public Long getCategory_id() {
+		return category_id;
+	}
+	public void setCategory_id(Long category_id) {
+		this.category_id = category_id;
+	}
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
 	public String getName() {
 		return name;
 	}
@@ -64,11 +78,5 @@ public class ProductDTO extends AbstractDTO<ProductDTO>{
 	}
 	public void setRating(Float rating) {
 		this.rating = rating;
-	}
-	public Long getCategory_id() {
-		return category_id;
-	}
-	public void setCategory_id(Long category_id) {
-		this.category_id = category_id;
 	}
 }

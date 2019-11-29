@@ -9,12 +9,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
 @Table(name = "users")
 public class UsersEntity extends ParentEntity {
 	@Column(name = "username", unique = true, nullable = false)
+	@NotNull
 	private String userName;
 
 	@Column(name = "password",nullable = false)

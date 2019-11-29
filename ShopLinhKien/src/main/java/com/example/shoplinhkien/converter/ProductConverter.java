@@ -26,8 +26,9 @@ public class ProductConverter {
 		dto.setModifiedBy(entity.getModifiedBy());
 		dto.setModifiedDate(entity.getModifiedDate());
 		dto.setWarranty(entity.getWarranty());
-//		dto.setCategory_id(entity.getCategoryEntity().getId());
-		return dto;
+		dto.setCategoryCode(entity.getCategoryEntity().getCategoryCode());
+		dto.setCategory_id(entity.getCategoryEntity().getId());
+		return dto; //Bravo
 	}
 	
 	public ProductEntity toEntity(ProductDTO dto) {

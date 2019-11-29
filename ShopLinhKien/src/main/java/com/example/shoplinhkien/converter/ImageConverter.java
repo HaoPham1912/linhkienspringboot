@@ -1,5 +1,9 @@
 package com.example.shoplinhkien.converter;
 
-public class ImageConverter {
+import org.springframework.stereotype.Component;
 
+@Component
+public class ImageConverter {
+	
+	
 }

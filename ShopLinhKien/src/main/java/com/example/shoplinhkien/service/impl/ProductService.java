@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.example.shoplinhkien.converter.ProductConverter;
 import com.example.shoplinhkien.dto.ProductDTO;
+import com.example.shoplinhkien.entities.CategoryEntity;
 import com.example.shoplinhkien.entities.ProductEntity;
+import com.example.shoplinhkien.repository.CategoryRepository;
 import com.example.shoplinhkien.repository.ProductRepository;
 import com.example.shoplinhkien.service.IProductService;
 
@@ -21,10 +23,15 @@ public class ProductService implements IProductService{
 	@Autowired
 	private ProductConverter productConverter;
 	
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
 	@Override
 	public ProductDTO save(ProductDTO productDTO) {
 		ProductEntity productEntity = new ProductEntity();
 		productEntity = productConverter.toEntity(productDTO);
+		CategoryEntity categoryEntity = categoryRepository.findOneByCategoryCode(productDTO.getCategoryCode());
+		productEntity.setCategoryEntity(categoryEntity);
 		productEntity = productRepository.save(productEntity);
 		return productConverter.toDto(productEntity);
 	}
