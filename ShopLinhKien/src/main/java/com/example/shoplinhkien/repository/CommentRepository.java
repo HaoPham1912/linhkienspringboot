@@ -1,5 +1,9 @@
 package com.example.shoplinhkien.repository;
 
-public interface CommentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.example.shoplinhkien.entities.CommentEntity;
+
+public interface CommentRepository extends JpaRepository<CommentEntity, Long>{
+	
 }
