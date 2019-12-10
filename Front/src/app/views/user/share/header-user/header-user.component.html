@@ -72,7 +72,7 @@
                                             <h4 class="product-price"><span class="qty">3x </span>$980.00</h4>
                                         </div>
                                         <div class="col-md-4" role="menuitem">
-                                                <button type="button" class="btn btn-pill btn-block btn-warning"><i class="fa fa-close"></i></button>
+                                                <button type="button" class="btn btn-pill btn-block btn-warning" data-toggle="modal" (click)="cancelModal.show()"><i class="fa fa-close"></i></button>
                                         </div>
                                     </div>
                                 </li>
@@ -124,3 +124,23 @@
     </div>
     <!-- /container -->
 </nav>
+<!-- /.modal delete-->
+<div bsModal #cancelModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-danger" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete product</h4>
+              <button type="button" class="close" (click)="cancelModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Do you want to delete this product?&hellip;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="cancelModal.hide()">No</button>
+              <button type="button" class="btn btn-danger">Yes</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal --><!-- /.modal delete -->
