@@ -6,6 +6,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {NumberPickerModule} from 'ng-number-picker';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -46,6 +47,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { UploadModule } from '@progress/kendo-angular-upload';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './views/user/share/cart/cart.component';
 
 
 
@@ -66,7 +68,8 @@ import { HttpClientModule } from '@angular/common/http';
     ChartsModule,
     ModalModule.forRoot(),
     UploadModule,
-    HttpClientModule
+    HttpClientModule,
+    NumberPickerModule
   ],
   declarations: [
     AppComponent,
@@ -81,7 +84,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderUserComponent,
     HomepageComponent,
     ProductDetailComponent,
-    ProductListComponent
+    ProductListComponent,
+    CartComponent
   ],
   providers: [{
     provide: LocationStrategy,

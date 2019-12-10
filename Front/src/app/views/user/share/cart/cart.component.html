@@ -1,0 +1,76 @@
+<!-- /NAVIGATION -->
+<div class="section" style="padding-top: 150px;">
+
+    <div class="container ">
+        <div class="cart mt-5">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <div class="media">
+                                <a class="thumbnail pull-left" href="#"> <img class="media-object"
+                                        src="assets/img/product02.png" style="width: 72px; height: 72px;"> </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
+                                    <span>Status: </span><span class="text-success"><strong>In
+                                            Stock</strong></span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center" >
+                            <ng-number-picker [(value)]="value"></ng-number-picker>
+                        </td>
+                        <td class=" text-center"><strong>$4.99</strong></td>
+                        <td class=" text-center">
+                            <strong>$4.99</strong>
+                        </td>
+                        <td class="text-center"><button type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span> Remove
+                            </button></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                            <h5>Subtotal<br>Shipping</h5>
+                            <h3>Total</h3>
+                        </td>
+                        <td class="text-right">
+                            <h5><strong>$24.59<br>FREE</strong></h5>
+                            <h3>$31.53</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                            <button type="button" class="btn btn-danger">
+                                <span class="fa fa-shopping-cart"></span> Continue
+                            </button></td>
+                        <td>
+                            <button type="button" class="btn btn-success">
+                                <span class="fa fa-check"></span>
+                                Checkout
+                            </button></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+    </div>
+</div>
