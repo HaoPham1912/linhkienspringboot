@@ -50,6 +50,7 @@ import { UploadModule } from '@progress/kendo-angular-upload';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './views/user/share/cart/cart.component';
 import { CheckoutComponent } from './views/user/share/checkout/checkout.component';
+import { OrderComponent } from './views/user/share/order/order.component';
 
 
 
@@ -88,7 +89,8 @@ import { CheckoutComponent } from './views/user/share/checkout/checkout.componen
     ProductDetailComponent,
     ProductListComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderComponent
   ],
   providers: [{
     provide: LocationStrategy,
