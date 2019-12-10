@@ -8,8 +8,15 @@ public class ProductDTO extends AbstractDTO<ProductDTO>{
 	private String series;
 	private String warranty;
 	private String color;
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
 	private String description;
 	private Float rating;
+	private String thumbnail;
 	private String categoryCode;
 	private Long category_id;
 	

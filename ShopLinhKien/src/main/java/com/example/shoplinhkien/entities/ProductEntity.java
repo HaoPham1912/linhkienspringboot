@@ -35,6 +35,17 @@ public class ProductEntity extends ParentEntity{
 	@Column
 	private String color;
 	
+	@Column
+	private String thumbnail;
+	
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
 	@Column(nullable = false)
 	private String decription;
 	
