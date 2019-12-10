@@ -11,6 +11,8 @@ import { ManageModule } from './views/admin/manage.module';
 import { HomepageComponent } from './views/homepage/homepage.component';
 import { ProductDetailComponent } from './views/user/share/product-detail/product-detail.component';
 import { ProductListComponent } from './views/user/share/product-list/product-list.component';
+import { CartComponent } from './views/user/share/cart/cart.component';
+import { CheckoutComponent} from './views/user/share/checkout/checkout.component';
 export const routes: Routes = [
   {
     path: '',
@@ -74,7 +76,14 @@ export const routes: Routes = [
         path: 'viewproductdetail',
         component: ProductDetailComponent,
       },
-      
+      {
+        path: 'viewcart',
+        component: CartComponent,
+      },
+      {
+        path: 'checkout',
+        component: CheckoutComponent,
+      },
      
     ]
   },
