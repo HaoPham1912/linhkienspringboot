@@ -1477,7 +1477,8 @@ body {
   }
   
   .product-thumb img {
-    width: 100%;
+    
+    width: 75%;
     border: 1px dotted black;
   }
   
