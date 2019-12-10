@@ -49,6 +49,7 @@ import { ChartsModule } from 'ng2-charts';
 import { UploadModule } from '@progress/kendo-angular-upload';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './views/user/share/cart/cart.component';
+import { CheckoutComponent } from './views/user/share/checkout/checkout.component';
 
 
 
@@ -86,7 +87,8 @@ import { CartComponent } from './views/user/share/cart/cart.component';
     HomepageComponent,
     ProductDetailComponent,
     ProductListComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent
   ],
   providers: [{
     provide: LocationStrategy,
