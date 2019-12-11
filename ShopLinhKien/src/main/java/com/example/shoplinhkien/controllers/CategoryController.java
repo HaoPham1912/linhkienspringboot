@@ -21,7 +21,7 @@ public class CategoryController {
 	public CategoryDTO create(@RequestBody CategoryDTO dto) {
 		return categoryService.save(dto);
 	}
-	@GetMapping(value = "list")
+	@GetMapping(value = "/listAllCategory")
 	public List<CategoryDTO> list(){
 		return categoryService.findAll();
 	}
