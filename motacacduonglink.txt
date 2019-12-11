@@ -1,5 +1,5 @@
-/register
-/login
+/guest/register
+/guest/login
 /user
 /user/homepage
 /user/laptop

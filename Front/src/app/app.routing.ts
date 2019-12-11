@@ -37,20 +37,7 @@ export const routes: Routes = [
       title: 'Page 500'
     }
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
+  
   {
     path: 'user/manage',
     component: ManageComponent,
@@ -122,6 +109,20 @@ export const routes: Routes = [
       title: 'Guest'
     },
     children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+        data: {
+          title: 'Login Page'
+        }
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        data: {
+          title: 'Register Page'
+        }
+      },
       {
         path: '',
         component: HomepageComponent,
