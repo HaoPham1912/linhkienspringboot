@@ -1,0 +1,18 @@
+vii, ii, i
+
+/register
+/login
+/user
+/user/homepage
+/user/laptop
+/user/viewproductlist
+/user/viewproductdetail
+/user/viewcart
+/user/checkout
+/admin
+/admin/manage
+/admin/manage/users
+/admin/manage/products
+/admin/manage/categories
+/admin/manage/orders
+
