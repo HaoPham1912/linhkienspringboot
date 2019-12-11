@@ -51,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './views/user/share/cart/cart.component';
 import { CheckoutComponent } from './views/user/share/checkout/checkout.component';
 import { OrderComponent } from './views/user/share/order/order.component';
-
+import { ManageComponent } from './views/user/manage/manage.component';
+import { InformationComponent } from './views/user/manage/information/information.component';
 
 
 
@@ -90,7 +91,9 @@ import { OrderComponent } from './views/user/share/order/order.component';
     ProductListComponent,
     CartComponent,
     CheckoutComponent,
-    OrderComponent
+    OrderComponent,
+    ManageComponent,
+    InformationComponent
   ],
   providers: [{
     provide: LocationStrategy,
