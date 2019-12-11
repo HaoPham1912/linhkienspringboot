@@ -68,7 +68,8 @@ export const routes: Routes = [
       {
         //tạm thời chưa biết hiển thị gì nên hiện đỡ tab user đầu
         path: '',
-        component: HomepageComponent,
+        redirectTo: 'homepage',
+        pathMatch: 'full',
       },
       {
         path: 'homepage',
