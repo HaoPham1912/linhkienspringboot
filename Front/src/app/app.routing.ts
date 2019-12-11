@@ -50,30 +50,26 @@ export const routes: Routes = [
       title: 'Register Page'
     }
   },
-  // {
-  //   path: 'user/manage',
-  //   component: ManageComponent,
-  //     children: [
-  //       {
-  //         //tạm thời chưa biết hiển thị gì nên hiện đỡ tab user đầu
-  //         path: '',
-  //         component: InformationComponent,
-  //       },
-  //       {
-  //         path: 'information',
-  //         component: InformationComponent,
-  //       },
-  //       {
-  //         path: 'checkorders',
-  //         component: CheckoutComponent,
-  //       },
-  //       {
-  //         path: 'checkorders',
-  //         component: OrdersComponent,
-          
-  //       }
-  //     ]
-  // },
+  {
+    path: 'user/manage',
+    component: ManageComponent,
+      children: [
+        {
+          //tạm thời chưa biết hiển thị gì nên hiện đỡ tab user đầu
+          path: '',
+          component: InformationComponent,
+        },
+        {
+          path: 'information',
+          component: InformationComponent,
+        },
+        {
+          path: 'checkorders',
+          component: OrdersComponent,
+        },
+        
+      ]
+  },
   {
     path: 'user',
     component: UserLayoutComponent,
@@ -110,6 +106,12 @@ export const routes: Routes = [
         path: 'checkout',
         component: CheckoutComponent,
       },
+    
+        // {
+        //   //tạm thời chưa biết hiển thị gì nên hiện đỡ tab user đầu
+        //   path: '',
+        //   loadChildren: () => import('./views/admin/manage.module').then(m => m.ManageModule)
+        // },
     ]
   },
 

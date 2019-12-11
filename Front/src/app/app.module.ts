@@ -53,7 +53,7 @@ import { CheckoutComponent } from './views/user/share/checkout/checkout.componen
 import { OrderComponent } from './views/user/share/order/order.component';
 import { ManageComponent } from './views/user/manage/manage.component';
 import { InformationComponent } from './views/user/manage/information/information.component';
-
+import { OrdersComponent } from './views/user/manage/orders/orders.component';
 
 
 @NgModule({
@@ -93,7 +93,8 @@ import { InformationComponent } from './views/user/manage/information/informatio
     CheckoutComponent,
     OrderComponent,
     ManageComponent,
-    InformationComponent
+    InformationComponent,
+    OrdersComponent
   ],
   providers: [{
     provide: LocationStrategy,

@@ -61,17 +61,17 @@ export const navUserItems: INavData[] = [
     },
     {
       name: 'Change Information',
-      url: '/admin/manage/categories',
+      url: '/user/manage/information',
       icon: 'icon-list'
     },
     {
       name: 'Check Orders',
-      url: '/admin/manage/products',
+      url: '/user/manage/checkorders',
       icon: 'icon-basket-loaded'
     },
     {
       name: 'Log Out',
-      url: '/admin/manage/orders',
+      url: '/guest/homepage',
       icon: 'icon-docs'
     }, 
   ];
