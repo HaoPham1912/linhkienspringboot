@@ -1,0 +1,30 @@
+.btn-group{
+    position: fixed;
+   z-index: 9999;
+}
+.dropdown-menu{
+   
+    z-index: 99999;
+}
+.btn .btn-warning .dropdown-toggle{
+    position: fixed;
+    z-index: 9999;
+}
+.dropdown-item{
+    
+    z-index: 99999;
+}
+.divider .dropdown-divider{
+    z-index: 99999;
+}
+.dropdown-menu{
+    width: 300px;
+}
+.cart-list{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+.modal-content{
+margin-top: 200px;
+}
