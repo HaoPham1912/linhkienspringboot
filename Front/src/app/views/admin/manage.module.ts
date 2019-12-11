@@ -27,6 +27,10 @@ import { OrdersComponent } from './orders/orders.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 // Components Routing
 import { ManageRoutingModule } from './manage-routing.module';
+
+
+//thêm
+
 @NgModule({
   imports: [
     CommonModule,
@@ -46,7 +50,7 @@ import { ManageRoutingModule } from './manage-routing.module';
     ProductsComponent,
     UsersComponent,
     CategoriesComponent,
-    OrdersComponent
+    OrdersComponent,
   ]
 })
 export class ManageModule { }

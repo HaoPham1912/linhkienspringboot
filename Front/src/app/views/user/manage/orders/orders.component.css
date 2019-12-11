@@ -2,7 +2,6 @@
     position: fixed;
    z-index: 9999;
 }
-
 .dropdown-menu{
    
     z-index: 99999;
@@ -12,7 +11,7 @@
     z-index: 9999;
 }
 .dropdown-item{
-  
+    
     z-index: 99999;
 }
 .divider .dropdown-divider{
@@ -28,7 +27,4 @@
 }
 .modal-content{
 margin-top: 200px;
-}
-li{
-color: rgb(248, 248, 250);
 }

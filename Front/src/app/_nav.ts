@@ -30,6 +30,8 @@ export const navItems: INavData[] = [
     ]
   },
  
+  
+ 
   //     {
   //       name: 'Register',
   //       url: '/register',
@@ -50,3 +52,26 @@ export const navItems: INavData[] = [
  
   
 ];
+export const navUserItems: INavData[] = [
+ 
+    {
+      name: 'HomePage',
+      url: '/user/homepage',
+      icon: 'icon-people'
+    },
+    {
+      name: 'Change Information',
+      url: '/user/manage/information',
+      icon: 'icon-list'
+    },
+    {
+      name: 'Check Orders',
+      url: '/user/manage/checkorders',
+      icon: 'icon-basket-loaded'
+    },
+    {
+      name: 'Log Out',
+      url: '/guest/homepage',
+      icon: 'icon-docs'
+    }, 
+  ];

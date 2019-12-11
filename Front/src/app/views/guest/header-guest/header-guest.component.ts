@@ -1,11 +1,12 @@
-import { Component,OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: 'app-header-user',
-  templateUrl: './header-user.component.html',
-  styleUrls: ['./header-user.component.css','../../share/user-style.css']
+  selector: 'app-header-guest',
+  templateUrl: './header-guest.component.html',
+  styleUrls: ['./header-guest.component.css','../../user/share/user-style.css']
 })
-export class HeaderUserComponent implements  OnDestroy {
+export class HeaderGuestComponent implements OnDestroy {
+
   status: { isOpen: boolean } = { isOpen: false };
   disabled: boolean = false;
   isDropup: boolean = true;
@@ -42,4 +43,5 @@ export class HeaderUserComponent implements  OnDestroy {
   change(value: boolean): void {
     this.status.isOpen = value;
   }
+
 }

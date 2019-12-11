@@ -51,8 +51,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './views/user/share/cart/cart.component';
 import { CheckoutComponent } from './views/user/share/checkout/checkout.component';
 import { OrderComponent } from './views/user/share/order/order.component';
-
-
+import { ManageComponent } from './views/user/manage/manage.component';
+import { InformationComponent } from './views/user/manage/information/information.component';
+import { OrdersComponent } from './views/user/manage/orders/orders.component';
+import { HeaderGuestComponent } from './views/guest/header-guest/header-guest.component';
+import { GuestLayoutComponent } from './containers/guest-layout/guest-layout.component';
 
 
 @NgModule({
@@ -90,7 +93,12 @@ import { OrderComponent } from './views/user/share/order/order.component';
     ProductListComponent,
     CartComponent,
     CheckoutComponent,
-    OrderComponent
+    OrderComponent,
+    ManageComponent,
+    InformationComponent,
+    OrdersComponent,
+    HeaderGuestComponent,
+    GuestLayoutComponent
   ],
   providers: [{
     provide: LocationStrategy,

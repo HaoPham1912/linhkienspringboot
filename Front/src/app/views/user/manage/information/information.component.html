@@ -1,0 +1,83 @@
+<div class="section" style="padding-top:50px">
+
+
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="card">
+          <div class="card-header">
+              <strong><h4>
+           Sửa thông tin cá nhân</h4></strong>
+          </div>
+          <div class="card-body">
+                
+                    <div class="form-group">
+                        <input class="input" type="text" name="name" placeholder="Full Name">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="input" type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                            <input class="input" type="tel" name="phone" placeholder="Telephone">
+                        </div>
+                    <div class="form-group">
+                        <input class="input" type="text" name="address" placeholder="Address">
+                    </div>
+                    <button type="button" class="primary-btn order-submit" data-toggle="modal"
+                    (click)="warningModal.show()">
+                    Save
+                </button>
+          </div>
+        </div>
+      </div><!--/.col-->
+      <div class="col-sm-6 col-md-4">
+            <div class="card">
+                    <div class="card-header">
+                        <strong><h4>
+                    Đổi mật khẩu</h4></strong>
+                    </div>
+                    <div class="card-body">
+                          
+                              <div class="form-group">
+                                  <input class="input" type="password" name="old-password" placeholder="Mật khẩu cũ">
+                              </div>
+          
+                              <div class="form-group">
+                                  <input class="input" type="password" name="new-pasword" placeholder="Mật khẩu mới">
+                              </div>
+                              <div class="form-group">
+                                      <input class="input" type="password" name="retype-password" placeholder="Xác nhận mật khẩu mới">
+                                  </div>
+                              <button type="button" class="primary-btn order-submit" data-toggle="modal"
+                              (click)="warningModal.show()">
+                              Save
+                          </button>
+                    </div>
+                  </div>
+          </div><!--/.col-->
+     
+    </div><!--/.row-->
+  </div>
+</div>
+<div bsModal #warningModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-primary" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Save</h4>
+                <button type="button" class="close" (click)="warningModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to save?&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" (click)="warningModal.hide()">Check</button>
+                <button type="button" class="btn btn-danger">Done</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /.modal check -->

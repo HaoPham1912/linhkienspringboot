@@ -1,0 +1,66 @@
+<div class="section">
+
+
+    <div class="animated fadeIn">
+        <div class="card">
+            <div class="card-header">
+                <strong>
+                    <h4>
+                        Your Order History</h4>
+                </strong>
+
+            </div>
+            <div class="row">
+                <div class="col-md-8 ml-3 mt-5">
+                    <input class="input" placeholder="Search your order">
+                </div>
+                <div class="col-md-2 mt-5">
+                    <button type="button" class="primary-btn order-submit" data-toggle="modal"
+                        (click)="warningModal.show()">
+                        <i class="fa fa-search "></i>
+                    </button>
+                </div>
+            </div>
+
+
+
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID Order</th>
+                            <th>Order Date</th>
+                            <th>Ship Address</th>
+                            <th>Ship Date</th>
+                            <th>Status</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>26/12/2019</td>
+                            <td>1 Vo Van Ngan</td>
+                            <td>2012/01/01</td>
+
+                            <td>
+                                <span class="badge badge-warning">Pending</span>
+                            </td>
+                            <td>$127827</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
