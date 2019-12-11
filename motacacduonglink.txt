@@ -1,5 +1,3 @@
-vii, ii, i
-
 /register
 /login
 /user
@@ -9,10 +7,19 @@ vii, ii, i
 /user/viewproductdetail
 /user/viewcart
 /user/checkout
+/user/manage/information
+/user/manage/checkorders
 /admin
 /admin/manage
 /admin/manage/users
 /admin/manage/products
 /admin/manage/categories
 /admin/manage/orders
+/guest
+/guest/homepage
+/guest/laptop
+/guest/viewproductlist
+/guest/viewproductdetail
+/guest/viewcart
+/guest/checkout
 

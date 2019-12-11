@@ -16,6 +16,7 @@ import { CheckoutComponent} from './views/user/share/checkout/checkout.component
 import { ManageComponent } from './views/user/manage/manage.component';
 import { InformationComponent } from './views/user/manage/information/information.component';
 import {OrdersComponent} from './views/user/manage/orders/orders.component';
+import { GuestLayoutComponent } from './containers/guest-layout/guest-layout.component';
 export const routes: Routes = [
   {
     path: '',
@@ -114,7 +115,44 @@ export const routes: Routes = [
         // },
     ]
   },
-
+  {
+    path: 'guest',
+    component: GuestLayoutComponent,
+    data: {
+      title: 'Guest'
+    },
+    children: [
+      {
+        path: '',
+        component: HomepageComponent,
+      },
+      {
+        path: 'homepage',
+        component: HomepageComponent,
+      },
+      {
+        path: 'laptop',
+        component: ProductListComponent,
+      },
+      {
+        path: 'viewproductlist',
+        component: ProductListComponent,
+      },
+      {
+        path: 'viewproductdetail',
+        component: ProductDetailComponent,
+      },
+      {
+        path: 'viewcart',
+        component: CartComponent,
+      },
+      {
+        path: 'checkout',
+        component: CheckoutComponent,
+      },
+    
+    ]
+  },
   {
     path: 'admin',
     component: AdminLayoutComponent,
