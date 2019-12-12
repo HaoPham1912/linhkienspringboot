@@ -27,14 +27,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>cus1</td>
-                <td>Member</td>
-                <td>Yiorgos</td>
-                <td>2012/01/01</td>
-                <td>Member</td>
-                <td>Member</td>
+              <tr *ngFor ="let user of users">
+                <td >{{user.id}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.createdDate}}</td>
+                <td>{{user.fullName}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address}}</td>
                 <td> <label class="switch switch-label switch-pill switch-outline-primary">
                     <input type="checkbox" class="switch-input" checked>
                     <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
@@ -43,25 +43,6 @@
                     <span class="	icon-eye"></span>
                   </button> </td>
               </tr>
-
-              <tr>
-                <td>2</td>
-                <td>cus2</td>
-                <td>Admin</td>
-                <td>Yiorgos</td>
-                <td>2012/01/01</td>
-                <td>Member</td>
-                <td>Member</td>
-                <td> <label class="switch switch-label switch-pill switch-outline-primary">
-                    <input type="checkbox" class="switch-input" checked>
-                    <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-                  </label></td>
-                <td>  <button type="button" class="btn btn-primary" data-toggle="modal" (click)="myModal.show()">
-                    <span class="	icon-eye"></span>
-                  </button> </td>
-              </tr>
-
-
             </tbody>
           </table>
           <ul class="pagination">

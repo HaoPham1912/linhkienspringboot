@@ -21,14 +21,14 @@ export class UsersComponent implements OnInit{
   }
   public getAllUsers(){
 
-    // this.userService.getAllUsers().subscribe(
-    //   res => {
-    //     this.users = res;
-    //   },
-    //   err => {
-    //     alert ("An error has occur")
-    //   }
-    // );
+    this.userService.getAllUsers().subscribe(
+      res => {
+        this.users = res;
+      },
+      err => {
+        alert ("An error has occur")
+      }
+    );
   }
   createUser(){
    
