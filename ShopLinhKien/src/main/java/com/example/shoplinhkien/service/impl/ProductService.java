@@ -3,6 +3,7 @@ package com.example.shoplinhkien.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,8 @@ public class ProductService implements IProductService{
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
+	@Autowired
+	private ModelMapper modelMapper;
 	@Override
 	public ProductDTO save(ProductDTO productDTO) {
 		ProductEntity productEntity = new ProductEntity();
@@ -41,7 +44,7 @@ public class ProductService implements IProductService{
 		List<ProductDTO> result = new ArrayList<ProductDTO>();
 		List<ProductEntity> productEntities = productRepository.findAll();
 		for(ProductEntity entity :productEntities) {
-			ProductDTO productDTO = productConverter.toDto(entity);
+			ProductDTO productDTO = modelMapper.map(entity, ProductDTO.class);
 			result.add(productDTO);
 		}
 		return result;

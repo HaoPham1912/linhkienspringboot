@@ -1,12 +1,5 @@
 package com.example.shoplinhkien.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.example.shoplinhkien.entities.CommentEntity;
-import com.example.shoplinhkien.entities.OrderEntity;
-import com.example.shoplinhkien.entities.RoleEntity;
-
 public class UsersDTO extends AbstractDTO<UsersDTO> {
 
 	private String userName;
