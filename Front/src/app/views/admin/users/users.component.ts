@@ -1,29 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Users } from '../../../containers/services/users/users'
 import { UsersService } from '../../../containers/services/users/users.service';
-import {User} from "../../../containers/services/users/users";
+
 
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   templateUrl: 'users.component.html'
 })
 export class UsersComponent implements OnInit{
-  fullName: string;
-  user: User;
+  users: Users[]=[];
 
   constructor( 
-    private userService: UsersService,private route: ActivatedRoute
+    private userService: UsersService
     ) {
 
     }
   ngOnInit(){
-    this.user= new User();
+    this.getAllUsers();
+  }
+  public getAllUsers(){
 
-      this.fullName = this.route.snapshot.params['id'];
-
-    this.userService.getUserList(this.fullName)
-      .subscribe(data => {
-        console.log(data)
-        this.user = data;
-      }, error => console.log(error));
+    // this.userService.getAllUsers().subscribe(
+    //   res => {
+    //     this.users = res;
+    //   },
+    //   err => {
+    //     alert ("An error has occur")
+    //   }
+    // );
+  }
+  createUser(){
+   
+   
   }
 }

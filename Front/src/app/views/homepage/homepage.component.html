@@ -6,6 +6,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hot-deal">
+				
 					<ul class="hot-deal-countdown">
 						<li>
 							<div>
@@ -65,7 +66,7 @@
 						<!-- Nav tabs -->
 						<tabset>
 							<!-- bấm zô tab nào thì hiển thị sản phẩm thuộc category tab đó xài ngFor liệt kê category -->
-							<tab heading="Laptop">
+							<tab *ngFor="let category of categories" heading={{category.categoryName}}>
 								<div class="col-md-12">
 									<!-- show product -->
 									<div class="container">
@@ -164,7 +165,7 @@
 						<!-- Nav tabs -->
 						<tabset>
 							<!-- bấm zô tab nào thì hiển thị sản phẩm thuộc category tab đó xài ngFor liệt kê category -->
-							<tab heading="Laptop">
+							<tab *ngFor="let category of categories" heading={{category.categoryName}}>
 								<div class="col-md-12">
 									<!-- show product -->
 									<div class="container">

@@ -1,11 +1,14 @@
 import { Component,OnDestroy } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import {Category} from '../../../homepage/category';
+import { CategoriesService } from '../../../../containers/services/categories/categories.service';
 @Component({
   selector: 'app-header-user',
   templateUrl: './header-user.component.html',
   styleUrls: ['./header-user.component.css','../../share/user-style.css']
 })
 export class HeaderUserComponent implements  OnDestroy {
+  categories: Category[]=[];
   status: { isOpen: boolean } = { isOpen: false };
   disabled: boolean = false;
   isDropup: boolean = true;
@@ -17,7 +20,18 @@ export class HeaderUserComponent implements  OnDestroy {
     'but wait! A third!'
   ];
 
-  constructor() { }
+  constructor(private categoriesService: CategoriesService) { }
+  public getAllCategories(){
+
+    this.categoriesService.getAllCategories().subscribe(
+      res => {
+        this.categories = res;
+      },
+      err => {
+        alert ("An error hass occur")
+      }
+    );
+  }
 
   ngOnDestroy () {
     this.status.isOpen = false;
