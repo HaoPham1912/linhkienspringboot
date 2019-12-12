@@ -18,8 +18,8 @@ public class UsersDTO extends AbstractDTO<UsersDTO> {
 	private String phone;
 	private Long role_id;
 	private String roleCode;
-	private List<OrderEntity> orderList = new ArrayList<OrderEntity>();
-	private List<CommentEntity> commList = new ArrayList<CommentEntity>();
+	//private List<OrderEntity> orderList = new ArrayList<OrderEntity>();
+	//private List<CommentEntity> commList = new ArrayList<CommentEntity>();
 
 
 	public String getRoleCode() {
@@ -28,22 +28,6 @@ public class UsersDTO extends AbstractDTO<UsersDTO> {
 
 	public void setRoleCode(String roleCode) {
 		this.roleCode = roleCode;
-	}
-
-	public List<OrderEntity> getOrderList() {
-		return orderList;
-	}
-
-	public void setOrderList(List<OrderEntity> orderList) {
-		this.orderList = orderList;
-	}
-
-	public List<CommentEntity> getCommList() {
-		return commList;
-	}
-
-	public void setCommList(List<CommentEntity> commList) {
-		this.commList = commList;
 	}
 
 	public String getUserName() {
