@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit{
     this.save();
   }
   reloadPage(){
-      this.router.navigate(['/guest/login']);
+    // alert("")
+    //   this.router.navigate(['/guest/login']);
   }
 }

@@ -11,4 +11,5 @@ passWord :string;
 phone : number; 
 status: number;
 userName :string;
+confirmpassword: string;
 }

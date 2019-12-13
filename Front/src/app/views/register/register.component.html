@@ -3,54 +3,133 @@
         <div class="offset-md-3 col-md-5">
 
             <div class="form-login" [hidden]="submitted">
-                <form (ngSubmit)="onSubmit()">
-                    <h4 style="color: white;">SIGN UP</h4>
+                <form #form="ngForm" (ngSubmit)="onSubmit()">
+                    <h4 style="color: #15161D;">SIGN UP</h4>
                     <div class="form-group">
-                            <input type="text" class="form-control" id="fullName" [(ngModel)]="user.fullName" name="fullName"
-                            placeholder="$2323">
+                        <input type="text" pattern="[a-zA-Z ]*" class="form-control" id="fullName"
+                            [(ngModel)]="user.fullName" name="fullName" placeholder="$2323" autofocus required
+                            #fullName="ngModel">
+                        <div *ngIf="fullName.invalid && (fullName.dirty ||fullName.touched)">
+                            <div *ngIf="fullName.errors.required">
+                                Name is required.
+                            </div>
+                            <div *ngIf="fullName.errors.minlength">
+                                Name must be at least 3 characters long.
+                            </div>
+                            <div *ngIf="fullName.errors.pattern">
+                                Name can not be special character or number.
+                            </div>
+                        </div>
 
                     </div>
                     <br />
                     <div class="form-group">
-                        <input type="text" id="email" class="form-control input-sm chat-input" [(ngModel)]="user.email"
-                            name="email" placeholder="Email" />
+                        <input type="email" id="email" class="form-control input-sm chat-input" [(ngModel)]="user.email"
+                            name="email" placeholder="Email" email required autofocus #email="ngModel" />
+                        <div *ngIf="email.invalid && (email.dirty ||email.touched)">
+                            <div *ngIf="email.errors.required">
+                                Email is required.
+                            </div>
+                            <div *ngIf="email.errors.email">
+                                Invalid Email.
+                            </div>
+                        </div>
                     </div>
                     <br />
                     <div class="form-group">
-                        <input type="text" id="phone" class="form-control input-sm chat-input" [(ngModel)]="user.phone"
-                            name="phone" placeholder="Phone" />
+                        <input type="tel" id="phone" class="form-control input-sm chat-input" [(ngModel)]="user.phone"
+                            name="phone" pattern="[0-9]*" placeholder="Phone" autofocus required minlength="10"
+                            maxlength="10" #phone="ngModel" />
+                        <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)">
+                            <div *ngIf="phone.errors.required">
+                                Phone is required.
+                            </div>
+                            <div *ngIf="phone.errors.minlength">
+                                Phone must be 10 characters long.
+                            </div>
+
+                            <div *ngIf="phone.errors.pattern">
+                                Phone must be contain number.
+                            </div>
+                        </div>
+
                     </div>
                     <br />
                     <div class="form-group">
                         <input type="text" id="address" class="form-control input-sm chat-input"
-                            [(ngModel)]="user.address" name="address" placeholder="Address" />
+                            [(ngModel)]="user.address" name="address" autofocus placeholder="Address" required
+                            #address="ngModel" />
+                        <div *ngIf="address.invalid && (address.dirty ||address.touched)">
+                            <div *ngIf="address.errors.required">
+                                Address is required.
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                  
+
+                            <div class="form-group">
+                                    <input type="text" id="userName" class="form-control input-sm chat-input"
+                                        [(ngModel)]="user.userName" name="userName" autofocus placeholder="user name" required
+                                        #userName="ngModel" maxlength="9" pattern="^[a-z0-9_-]{5,9}$" />
+                                    <div *ngIf="userName.invalid && (userName.dirty ||userName.touched)">
+                                        <div *ngIf="userName.errors.required">
+                                                userName is required.
+                                        </div>
+                                        <div *ngIf="userName.errors.pattern">
+                                                Must contain at least 5 characters max 9 characters and does not contain unicode.
+                                            </div>
+                                    </div>
+                                </div>
+
+                        
+                    <br />
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control input-sm chat-input"
+                            [(ngModel)]="user.passWord" name="passWord" placeholder="Password" minlength="8"
+                            maxlength="15" autofocus required #password="ngModel"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" />
+                        <div *ngIf="password.invalid && (password.dirty ||password.touched)">
+                            <div *ngIf="password.errors.required">
+                                Password is required.
+                            </div>
+                            <div *ngIf="password.errors.minlength">
+                                Password must be at least 8 characters long.
+                            </div>
+
+                            <div *ngIf="password.errors.pattern">
+                                Must contain at least one number and one uppercase and lowercase letter.
+                            </div>
+                        </div>
                     </div>
                     <br />
                     <div class="form-group">
-                        <input type="text" id="userName" class="form-control input-sm chat-input"
-                            [(ngModel)]="user.userName" name="userName" placeholder="Username" />
+                        <input type="password" id="retypePassword" class="form-control input-sm chat-input"
+                            placeholder="Retype Password" [(ngModel)]="user.confirmpassword" name="confirmpassword"
+                            autofocus required #confirmpassword="ngModel" pattern="{{ password.value }}" />
+                        <div *ngIf=" confirmpassword.invalid && (form.submitted || confirmpassword.touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="confirmpassword.errors.required"> Confirm password is required. </div>
+                            <div *ngIf="confirmpassword.errors.pattern"> Password & Confirm Password does not match.
+                            </div>
+                        </div>
+
+
                     </div>
+                    <button type="submit" class="btn btn-success" [disabled]="!form.form.valid">Sign Up</button>
                     <br />
-                    <div class="form-group">
-                        <input type="text" id="password" class="form-control input-sm chat-input"
-                            [(ngModel)]="user.passWord" name="passWord" placeholder="Password" />
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <input type="text" id="retypePassword" class="form-control input-sm chat-input"
-                            placeholder="Retype Password" />
-                    </div>
-                    <button type="submit" class="btn btn-success">Sign Up</button>
-                    <br />       a     
                     <div class="footer-form-login">
-                            <hr/>
-                    <p>Have an account ? <a routerLink="/guest/login"> Log in</a></p>
-                </div>
+                        <hr />
+                        <p>Have an account ? <a routerLink="/guest/login"> Log in</a></p>
+                    </div>
                 </form>
             </div>
             <div [hidden]="!submitted">
                 <h4>You submitted successfully!</h4>
                 <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+                <a [routerLink]="['/guest/login']" >
+                    Login
+                  </a>
             </div>
         </div>
 

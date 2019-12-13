@@ -2259,7 +2259,7 @@ body {
   }
   .form-login {
     text-align: center;
-    background-color: #15161D;
+    background-color: #cfcfcf;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -2268,19 +2268,19 @@ body {
     margin-bottom: 50px;
     margin-left: 50px;
     border-radius: 15px;
-    border-color:#d2d2d2;
+    border-color:#15161D;
     border-width: 5px;
     box-shadow:0 1px 0 #cfcfcf;
-    border: 4px dashed white;
+    border: 4px dashed #15161D;
 }
 .form-login input{
   background-color: transparent;
-  border: 2px solid #cfcfcf;
-  color: #E4E7ED;
+  border: 2px solid #15161D;
+  color: #15161D;
   
 }
 .footer-form-login{
- color: white;
+ color: 15161D;
 }
 .footer-form-login hr{
   border: 1px solid rgb(182, 6, 6);
