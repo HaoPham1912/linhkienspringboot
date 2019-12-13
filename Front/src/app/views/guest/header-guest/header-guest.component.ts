@@ -1,25 +1,39 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CategoriesService } from '../../../containers/services/categories/categories.service';
+import { Category } from '../../homepage/category';
 
 @Component({
   selector: 'app-header-guest',
   templateUrl: './header-guest.component.html',
   styleUrls: ['./header-guest.component.css','../../user/share/user-style.css']
 })
-export class HeaderGuestComponent implements OnDestroy {
+export class HeaderGuestComponent implements OnDestroy, OnInit {
 
   status: { isOpen: boolean } = { isOpen: false };
   disabled: boolean = false;
   isDropup: boolean = true;
   autoClose: boolean = false;
-
+  categories: Category[]=[];
   items: string[] = [
     'The first choice!',
     'And another choice for you.',
     'but wait! A third!'
   ];
 
-  constructor() { }
-
+  constructor(private categoriesService: CategoriesService) { }
+  ngOnInit(){
+    this.getAllCategories();
+  }
+  getAllCategories(){
+    this.categoriesService.getAllCategories().subscribe(
+      res => {
+        this.categories = res;
+      },
+      err => {
+        alert ("An error hass occur")
+      }
+    );
+  }
   ngOnDestroy () {
     this.status.isOpen = false;
   }
