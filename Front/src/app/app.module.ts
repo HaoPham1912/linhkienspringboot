@@ -7,7 +7,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import {NumberPickerModule} from 'ng-number-picker';
-
+import { FormsModule } from '@angular/forms';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -37,6 +37,7 @@ import {
   AppHeaderModule,
   AppFooterModule,
   AppSidebarModule,
+  
   
 } from '@coreui/angular';
 // Import routing module
@@ -76,7 +77,8 @@ import { PaginationComponent } from './views/parts/pagination/pagination.compone
     ModalModule.forRoot(),
     UploadModule,
     HttpClientModule,
-    NumberPickerModule
+    NumberPickerModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,

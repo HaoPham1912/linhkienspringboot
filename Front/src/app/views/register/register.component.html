@@ -1,41 +1,58 @@
+<div class="container" style="padding-top: 200px;">
+    <div class="row">
+        <div class="offset-md-3 col-md-5">
 
-
-    <div class="container" style="padding-top: 200px;">
-        <div class="row">
-            <div class="offset-md-3 col-md-5">
-                <div class="form-login">
+            <div class="form-login" [hidden]="submitted">
+                <form (ngSubmit)="onSubmit()">
                     <h4 style="color: white;">SIGN UP</h4>
-                    <input type="text" id="userPassword" class="form-control input-sm chat-input"
-                        placeholder="Full Name" />
-                    <br />
-                    <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="Email" />
-                    <br />
-                    <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="Phone" />
-                    <br />
-                    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Address" />
-                    <br />
-                    <input type="text" id="userPassword" class="form-control input-sm chat-input"
-                        placeholder="Username" />
-                    <br />
-                    <input type="text" id="userPassword" class="form-control input-sm chat-input"
-                        placeholder="Password" />
-                    <br />
-                    <input type="text" id="userPassword" class="form-control input-sm chat-input"
-                        placeholder="Retype Password" />
-                    <br />
-                    <div class="wrapper">
-                        <span class="group-btn">
-                            <a href="#" class="btn btn-danger btn-md">Sign Up <i class="fa fa-sign-in"></i></a>
-                        </span>
+                    <div class="form-group">
+                            <input type="text" class="form-control" id="fullName" [(ngModel)]="user.fullName" name="fullName"
+                            placeholder="$2323">
+
                     </div>
-                  
+                    <br />
+                    <div class="form-group">
+                        <input type="text" id="email" class="form-control input-sm chat-input" [(ngModel)]="user.email"
+                            name="email" placeholder="Email" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" id="phone" class="form-control input-sm chat-input" [(ngModel)]="user.phone"
+                            name="phone" placeholder="Phone" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" id="address" class="form-control input-sm chat-input"
+                            [(ngModel)]="user.address" name="address" placeholder="Address" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" id="userName" class="form-control input-sm chat-input"
+                            [(ngModel)]="user.userName" name="userName" placeholder="Username" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" id="password" class="form-control input-sm chat-input"
+                            [(ngModel)]="user.passWord" name="passWord" placeholder="Password" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" id="retypePassword" class="form-control input-sm chat-input"
+                            placeholder="Retype Password" />
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign Up</button>
+                    <br />       a     
                     <div class="footer-form-login">
                             <hr/>
                     <p>Have an account ? <a routerLink="/guest/login"> Log in</a></p>
                 </div>
-                </div>
-
+                </form>
+            </div>
+            <div [hidden]="!submitted">
+                <h4>You submitted successfully!</h4>
+                <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
             </div>
         </div>
-    </div>
 
+    </div>
+</div>
