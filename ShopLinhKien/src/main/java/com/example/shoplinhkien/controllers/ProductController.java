@@ -18,12 +18,12 @@ public class ProductController {
 	@Autowired
 	private IProductService productService;
 	
-	@PostMapping(value = "/addproduct")
+	@PostMapping(value = "/api/addProduct")
 	public ProductDTO add(@RequestBody ProductDTO dto) {
 		return productService.save(dto);
 	}
 	
-	@GetMapping(value = "/getList")
+	@GetMapping(value = "/api/getListProduct")
 	public List<ProductDTO> findAdd(){
 		return productService.findAll();
 	}

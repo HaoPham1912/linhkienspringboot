@@ -21,20 +21,25 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 
-	@PostMapping(value = "/addUser")
+	@PostMapping(value = "/api/addUser")
 	public UsersDTO addUser(@RequestBody UsersDTO dto) {
 		return userService.save(dto);
 	}
 	
-	@GetMapping(value = "/getAllUser")
+	@GetMapping(value = "/api/getAllUser")
 	public List<UsersDTO> getAllUser(){
 		return userService.allListUSer();
 	}
 	
-	@PutMapping(value = "/editUser/{id}")
+	@PutMapping(value = "/api/editUser/{id}")
 	public UsersDTO updateUser(@RequestBody UsersDTO usersDTO, 
 			@PathVariable("id") Long id) {
 		usersDTO.setId(id);
 		return userService.save(usersDTO);
+	}
+	
+	@GetMapping(value = "/findUser")
+	public UsersDTO findByUsername() {
+		return userService.loadUserByUsername("cus1");
 	}
 }

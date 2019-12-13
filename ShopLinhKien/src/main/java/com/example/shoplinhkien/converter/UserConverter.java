@@ -19,8 +19,6 @@ public class UserConverter {
 		dto.setEmail(entity.getEmail());
 		dto.setAddress(entity.getAddress());
 		dto.setStatus(entity.getStatus());
-		dto.setRole_id(entity.getRoleEntity().getId());
-		dto.setRoleCode(entity.getRoleEntity().getCode());
 		dto.setCreatedBy(entity.getCreatedBy());
 		dto.setCreatedDate(entity.getCreatedDate());
 		dto.setModifiedBy(entity.getModifiedBy());

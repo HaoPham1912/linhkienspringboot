@@ -22,7 +22,7 @@ public class CategoryController {
 	public CategoryDTO create(@RequestBody CategoryDTO dto) {
 		return categoryService.save(dto);
 	}
-	@GetMapping(value = "/listAllCategory")
+	@GetMapping(value = "/api/listAllCategory")
 	public List<CategoryDTO> list(){
 		return categoryService.findAll();
 	}

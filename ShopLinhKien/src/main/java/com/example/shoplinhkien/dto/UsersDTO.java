@@ -9,22 +9,22 @@ public class UsersDTO extends AbstractDTO<UsersDTO> {
 	private String email;
 	private String address;
 	private String phone;
-	private Long role_id;
-	private String roleCode;
+	private String role;
 	//private List<OrderEntity> orderList = new ArrayList<OrderEntity>();
 	//private List<CommentEntity> commList = new ArrayList<CommentEntity>();
 
 
-	public String getRoleCode() {
-		return roleCode;
-	}
-
-	public void setRoleCode(String roleCode) {
-		this.roleCode = roleCode;
-	}
 
 	public String getUserName() {
 		return userName;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public void setUserName(String userName) {
@@ -77,13 +77,5 @@ public class UsersDTO extends AbstractDTO<UsersDTO> {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-
-	public Long getRole_id() {
-		return role_id;
-	}
-
-	public void setRole_id(Long role_id) {
-		this.role_id = role_id;
 	}
 }

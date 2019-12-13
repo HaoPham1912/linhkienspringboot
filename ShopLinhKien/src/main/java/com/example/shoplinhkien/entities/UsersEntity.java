@@ -5,12 +5,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 
 @Entity
 @Table(name = "users")
@@ -19,35 +16,33 @@ public class UsersEntity extends ParentEntity {
 	@NotNull
 	private String userName;
 
-	@Column(name = "password",nullable = false)
+	@Column(name = "password", nullable = false)
 	private String passWord;
+	@Column(name = "role", nullable = false)
+	private String role;
 
-	@Column(name = "status",nullable = false)
+	@Column(name = "status", nullable = false)
 	private Integer status;
 
-	@Column(name = "fullname",nullable = false)
+	@Column(name = "fullname", nullable = false)
 	private String fullName;
 
-	@Column(name = "email",nullable = false)
+	@Column(name = "email", nullable = false)
 	private String email;
 
-	@Column(name = "phone",nullable = false)
+	@Column(name = "phone", nullable = false)
 	private String phone;
 
-	@Column(name = "address",nullable = false)
+	@Column(name = "address", nullable = false)
 	private String address;
 
-
-	@ManyToOne
-	@JoinColumn(name = "role_id",nullable = false)
-	private RoleEntity roleEntity;
-	
 	@OneToMany(mappedBy = "usersEntity")
 	private List<OrderEntity> orderList = new ArrayList<OrderEntity>();
-	
+
 	@OneToMany(mappedBy = "userComment")
 	private List<CommentEntity> commList = new ArrayList<CommentEntity>();
 	
+
 	public String getUserName() {
 		return userName;
 	}
@@ -104,14 +99,6 @@ public class UsersEntity extends ParentEntity {
 		this.address = address;
 	}
 
-	public RoleEntity getRoleEntity() {
-		return roleEntity;
-	}
-
-	public void setRoleEntity(RoleEntity roleEntity) {
-		this.roleEntity = roleEntity;
-	}
-
 	public List<OrderEntity> getOrderList() {
 		return orderList;
 	}
@@ -127,5 +114,13 @@ public class UsersEntity extends ParentEntity {
 	public void setCommList(List<CommentEntity> commList) {
 		this.commList = commList;
 	}
-	
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 }

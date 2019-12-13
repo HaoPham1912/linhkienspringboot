@@ -10,18 +10,14 @@ import org.springframework.stereotype.Service;
 
 import com.example.shoplinhkien.converter.UserConverter;
 import com.example.shoplinhkien.dto.UsersDTO;
-import com.example.shoplinhkien.entities.RoleEntity;
 import com.example.shoplinhkien.entities.UsersEntity;
-import com.example.shoplinhkien.repository.RoleRepository;
 import com.example.shoplinhkien.repository.UserRepository;
 import com.example.shoplinhkien.service.IUserService;
 
 @Service
 public class UserService implements IUserService{
 	
-	@Autowired
-	private RoleRepository roleRepository;
-	
+
 	@Autowired
 	private UserRepository  userRepository;
 	
@@ -43,11 +39,8 @@ public class UserService implements IUserService{
 		else {
 			usersEntity = modelMapper.map(dto, UsersEntity.class);
 		}
-		RoleEntity roleEntity = roleRepository.findOneByCode(dto.getRoleCode());
-		usersEntity.setRoleEntity(roleEntity);
 		usersEntity = userRepository.save(usersEntity);
 		UsersDTO results =modelMapper.map(usersEntity, UsersDTO.class);
-		results.setRole_id(usersEntity.getRoleEntity().getId());
 		return results;
 	}
 
@@ -58,10 +51,18 @@ public class UserService implements IUserService{
 		entities = userRepository.findAll();
 		for(UsersEntity entity:entities) {
 			UsersDTO dto = modelMapper.map(entity, UsersDTO.class);
-			dto.setRole_id(entity.getId());
 			list.add(dto);
 		}
 		return list;
+	}
+
+	@Override
+	public UsersDTO loadUserByUsername(String username) {
+		UsersEntity usersEntity = userRepository.findByUserName(username);
+
+		UsersDTO dto = modelMapper.map(usersEntity, UsersDTO.class);
+		return dto;
+		
 	}
 
 }
