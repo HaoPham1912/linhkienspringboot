@@ -7,7 +7,7 @@ import { Category } from '../../../views/homepage/category';
   providedIn: 'root'
 })
 export class CategoriesService {
-  private BASE_URL = "http://localhost:8080";
+  private BASE_URL = "http://localhost:8080/api";
   private ALL_CATEGORIES_URL =`${this.BASE_URL}\\listAllCategory`;
 
   constructor(private http: HttpClient) {

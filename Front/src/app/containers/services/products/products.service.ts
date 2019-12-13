@@ -6,9 +6,9 @@ import { Products } from './products';
   providedIn: 'root'
 })
 export class ProductsService {
-  private BASE_URL = "http://localhost:8080";
-  private ALL_PRODUCTS_URL =`${this.BASE_URL}\\getList`;
-  private CREATE_PRODUCTS_URL =`${this.BASE_URL}\\addproduct`;
+  private BASE_URL = "http://localhost:8080/api";
+  private ALL_PRODUCTS_URL =`${this.BASE_URL}\\getListProduct`;
+  private CREATE_PRODUCTS_URL =`${this.BASE_URL}\\addProduct`;
   private category_url= `${this.BASE_URL}\\listAllCategory`;
   constructor(private http: HttpClient) {
 

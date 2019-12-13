@@ -9,7 +9,10 @@ email :string;
 fullName :string;
 passWord :string;
 phone : number; 
-status: number;
+status: number= 1;
 userName :string;
 confirmpassword: string;
+role: string ='CUSTOMER';
+
+
 }

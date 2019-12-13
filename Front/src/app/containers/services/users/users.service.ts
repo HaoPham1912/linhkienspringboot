@@ -7,7 +7,7 @@ import { Users } from './users';
   providedIn: 'root'
 })
 export class UsersService {
-  private BASE_URL = "http://localhost:8080";
+  private BASE_URL = "http://localhost:8080/api";
   private ALL_USERS_URL =`${this.BASE_URL}\\getAllUser`;
   private REGISTER_USER_URL = `${this.BASE_URL}\\addUser`;
   constructor(private http: HttpClient) { }

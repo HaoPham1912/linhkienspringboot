@@ -15,5 +15,5 @@ export class Products {
     rating: string;
     thumbnail: string;
     categoryCode: string;
-    category_id: number
+    category_id: number;
 }
