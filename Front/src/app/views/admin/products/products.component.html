@@ -24,24 +24,25 @@
                   <th>Promote Price</th>
                   <th>Rating</th>
                   <th>Warranty</th>
-                  <th>Images</th>
-                  <th>Action</th>
                  
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>HP Pavillion</td>
+                <tr *ngFor ="let product of products">
+                  <td>{{product.id}}</td>
+                  <td>{{product.name}}</td>
                
-                  <td>Sony</td>
-                  <td>Silver</td>
-                  <td>Description</td>
-                  <td>Price</td>
-                  <td>Promote Price</td>
-                  <td>Rating</td>
-                  <td>12 months</td>
-                  <td> 
+                  <td>{{product.brand}}</td>
+                  <td>{{product.color}}</td>
+                  <td>{{product.description}}</td>
+                  <td>{{product.price}}</td>
+                  <td>{{product.promoPrice}}</td>
+                  <td>{{product.rating}}</td>
+                  <td>{{product.warranty}}</td>
+                 
+                  <!-- <td>{{product}}</td> -->
+                  <!-- <td> 
                       <div class="row">
                         <div class="col-md-6">
                           <button type="button" class="btn btn-success" data-toggle="modal" (click)="viewModal.show()">
@@ -50,15 +51,15 @@
                         </div>
                         
                       </div>
-                    </td>
+                    </td> -->
                   <td>
                     <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-8">
                         <button type="button" class="btn btn-warning" data-toggle="modal" (click)="editModal.show()">
                           <span class="icon-pencil"></span>
                         </button>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3">
                         <button type="button" class="btn btn-danger" data-toggle="modal" (click)="deleteModal.show()">
                           <span class="icon-trash"></span>
                         </button>
