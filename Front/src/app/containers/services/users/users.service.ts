@@ -9,12 +9,12 @@ import { Users } from './users';
 export class UsersService {
   private BASE_URL = "http://localhost:8080";
   private ALL_USERS_URL =`${this.BASE_URL}\\getAllUser`;
-  private CREATE_USERS_URL = `${this.BASE_URL}\\addUser`;
+  private REGISTER_USER_URL = `${this.BASE_URL}\\addUser`;
   constructor(private http: HttpClient) { }
   getAllUsers() : Observable <Users[]>{
     return this.http.get<Users[]>(this.ALL_USERS_URL);
    }
-   postUser (user: Users): Observable <Users>{
-     return this.http.post<Users>(this.CREATE_USERS_URL,user); 
-   }
+   registerUser(user: Object): Observable<Object> {
+    return this.http.post(`${this.REGISTER_USER_URL}`, user);
+  }
 }

@@ -1,14 +1,14 @@
-export interface Users {
+export class Users {
 id: number;
-created_by: string;
-created_date: Date;
-modified_by :string;
-modified_date : Date;
+createdBy: string;
+createdDate: Date;
+modifiedBy :string;
+modifiedDate : Date;
 address : string;
 email :string;
-fullname :string;
-password :string;
+fullName :string;
+passWord :string;
 phone : number; 
 status: number;
-username :string;
+userName :string;
 }

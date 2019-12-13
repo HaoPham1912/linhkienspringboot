@@ -32,7 +32,6 @@
               <tr *ngFor="let product of products">
                 <td>{{product.id}}</td>
                 <td>{{product.name}}</td>
-
                 <td>{{product.brand}}</td>
                 <td>{{product.color}}</td>
                 <td>{{product.description}}</td>
@@ -118,14 +117,14 @@
           </div>
           <div class="form-group">
             <label for="price">Warranty</label>
-            <input type="text" class="form-control" id="waranty" [(ngModel)]="product.waranty" name="waranty"
+            <input type="text" class="form-control" id="waranty" [(ngModel)]="product.warranty" name="warranty"
               placeholder="12 months">
           </div>
 
 
           <div class="form-group">
-            <label for="descriptionProduct">Description</label>
-            <input type="text" class="form-control" id="descriptionProduct" [(ngModel)]="product.description"
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="descriptSion" [(ngModel)]="product.description"
               name="description" placeholder="abcdsđsdsd">
 
           </div>
