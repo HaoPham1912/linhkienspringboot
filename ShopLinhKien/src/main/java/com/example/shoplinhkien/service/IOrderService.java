@@ -1,5 +1,9 @@
 package com.example.shoplinhkien.service;
 
-public interface IOrderService {
+import java.util.List;
 
+import com.example.shoplinhkien.dto.OrderDTO;
+
+public interface IOrderService {
+	List<OrderDTO> findOrderByCustomer(Long idcustomer);
 }

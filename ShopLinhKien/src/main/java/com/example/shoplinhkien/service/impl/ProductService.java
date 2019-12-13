@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.shoplinhkien.converter.ProductConverter;
@@ -48,5 +49,10 @@ public class ProductService implements IProductService{
 			result.add(productDTO);
 		}
 		return result;
+	}
+
+	@Override
+	public void delete(Long id) {
+		productRepository.deleteById(id);
 	}
 }

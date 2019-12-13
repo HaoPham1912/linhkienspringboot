@@ -41,7 +41,6 @@ public class UsersEntity extends ParentEntity {
 
 	@OneToMany(mappedBy = "userComment")
 	private List<CommentEntity> commList = new ArrayList<CommentEntity>();
-	
 
 	public String getUserName() {
 		return userName;
