@@ -56,6 +56,7 @@ import { InformationComponent } from './views/user/manage/information/informatio
 import { OrdersComponent } from './views/user/manage/orders/orders.component';
 import { HeaderGuestComponent } from './views/guest/header-guest/header-guest.component';
 import { GuestLayoutComponent } from './containers/guest-layout/guest-layout.component';
+import { PaginationComponent } from './views/parts/pagination/pagination.component';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { GuestLayoutComponent } from './containers/guest-layout/guest-layout.com
     InformationComponent,
     OrdersComponent,
     HeaderGuestComponent,
-    GuestLayoutComponent
+    GuestLayoutComponent,
+    PaginationComponent
   ],
   providers: [{
     provide: LocationStrategy,

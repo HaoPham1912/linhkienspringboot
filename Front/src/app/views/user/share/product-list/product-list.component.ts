@@ -1,15 +1,57 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ProductsService } from '../../../../containers/services/products/products.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from "rxjs";
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css','../../share/user-style.css']
+  styleUrls: ['./product-list.component.css', '../../share/user-style.css']
 })
-export class ProductListComponent implements OnInit {
-
-  constructor() { }
+export class ProductListComponent implements OnInit, OnDestroy {
+  title: string;
+  page: any;
+  private paramSub: Subscription;
+  private querySub: Subscription;
+  constructor(
+    private productsService: ProductsService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.querySub = this.route.queryParams.subscribe(() => {
+      this.update();
+    });
+    this.paramSub = this.route.params.subscribe(() => {
+      this.update();
+    });
   }
-
+  ngOnDestroy(): void {
+    this.querySub.unsubscribe();
+    this.paramSub.unsubscribe();
+  }
+  update() {
+    if (this.route.snapshot.queryParamMap.get('page')) {
+      const currentPage = +this.route.snapshot.queryParamMap.get('page');
+      const size = +this.route.snapshot.queryParamMap.get('size');
+      this.getProds(currentPage, size);
+    } else {
+      this.getProds();
+    }
+  }
+  getProds(page: number = 1, size: number = 3) {
+    if (this.route.snapshot.url.length == 1) {
+      this.productsService.getAllInPage(+page, +size)
+        .subscribe(page => {
+          this.page = page;
+          this.title = 'Get Whatever You Want!';
+        });
+    } else { //  /category/:id
+      const type = this.route.snapshot.url[1].path;
+      this.productsService.getCategoryInPage(+type, page, size)
+        .subscribe(categoryPage => {
+          this.title = categoryPage.category;
+          this.page = categoryPage.page;
+        });
+    }
+  }
 }

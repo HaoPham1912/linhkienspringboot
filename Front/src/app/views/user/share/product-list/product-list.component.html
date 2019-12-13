@@ -81,24 +81,7 @@
             <!-- STORE -->
             <div id="store" class="col-md-9">
                 <!-- store top filter -->
-                <div class="store-filter clearfix">
-
-                    <ul class="store-grid">
-                        <div class="store-sort">
-
-
-                            <label>
-                                Show:
-                                <select class="input-select">
-                                    <option value="0">5</option>
-                                    <option value="1">10</option>
-                                    <option value="2">15</option>
-                                    <option value="3">20</option>
-                                </select>
-                            </label>
-                        </div>
-                    </ul>
-                </div>
+              
                 <!-- /store top filter -->
                 <!-- show product -->
                 <div class="animated fadeIn">
@@ -118,10 +101,10 @@
                                             <img src="assets/img/laptop/product01.png" alt="">
 
                                         </div>
-                                        <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name</a></h3>
-                                            <h4 class="product-price">$980.00 </h4>
+                                        <div *ngFor="let product of page?.content" class="product-body">
+                                            <p class="product-category">{{product.categoryCode}}</p>
+                                            <h3 class="product-name"><a href="#">{{product.name}}</a></h3>
+                                            <h4 class="product-price">{{product.price}} </h4>
                                             <div class="product-rating">
 
                                                 <i class="fa fa-star"></i>
@@ -146,21 +129,13 @@
                         </div>
                         <!--/.col-->
                     </div>
+                    <app-pagination  [currentPage]="page" ></app-pagination>
                     <!--/.row-->
                 </div>
                 <!-- show product -->
 
                 <!-- store bottom filter -->
-                <div class="store-filter clearfix">
-                    <span class="store-qty">Showing 20-100 products</span>
-                    <ul class="store-pagination">
-                        <li class="active">1</li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
-                </div>
+               
                 <!-- /store bottom filter -->
             </div>
             <!-- /STORE -->

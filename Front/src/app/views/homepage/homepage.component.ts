@@ -13,6 +13,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCategories();
+    this.getProductbyCategory();
   }
 public getAllCategories(){
 
@@ -24,6 +25,9 @@ public getAllCategories(){
       alert ("An error hass occur")
     }
   );
+}
+public getProductbyCategory(){
+ 
 }
 
 }

@@ -8,10 +8,29 @@ import { Products } from './products';
 export class ProductsService {
   private BASE_URL = "http://localhost:8080";
   private ALL_PRODUCTS_URL =`${this.BASE_URL}\\getList`;
+  private CREATE_PRODUCTS_URL =`${this.BASE_URL}\\addproduct`;
+  private category_url= `${this.BASE_URL}\\listAllCategory`;
   constructor(private http: HttpClient) {
 
    }
    getAllProducts() : Observable <Products[]>{
     return this.http.get<Products[]>(this.ALL_PRODUCTS_URL);
    }
+   getAllInPage(page: number, size: number): Observable<any> {
+    const url = `${this.ALL_PRODUCTS_URL}?page=${page}&size=${size}`;
+    return this.http.get(url)
+        .pipe(
+            // tap(_ => console.log(_)),
+        )
+}
+getCategoryInPage(categoryType: number, page: number, size: number): Observable<any> {
+  const url = `${this.category_url}/${categoryType}?page=${page}&size=${size}`;
+  return this.http.get(url).pipe(
+      // tap(data => console.log(data))
+  );
+}
+createProduct(product: Object): Observable<Object> {
+  return this.http.post(`${this.CREATE_PRODUCTS_URL}`, product);
+}
+
 }

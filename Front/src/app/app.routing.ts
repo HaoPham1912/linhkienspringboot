@@ -82,10 +82,16 @@ export const routes: Routes = [
       {
         path: 'viewproductlist',
         component: ProductListComponent,
+        
+      },
+      {
+        path: 'viewproductlist/:id',
+        component: ProductListComponent,
       },
       {
         path: 'viewproductdetail',
         component: ProductDetailComponent,
+        
       },
       {
         path: 'viewcart',

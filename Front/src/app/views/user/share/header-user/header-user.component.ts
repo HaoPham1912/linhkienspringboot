@@ -1,4 +1,4 @@
-import { Component,OnDestroy } from '@angular/core';
+import { Component,OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Category} from '../../../homepage/category';
 import { CategoriesService } from '../../../../containers/services/categories/categories.service';
@@ -21,6 +21,9 @@ export class HeaderUserComponent implements  OnDestroy {
   ];
 
   constructor(private categoriesService: CategoriesService) { }
+  ngOnInit() {
+    this.getAllCategories();
+  }
   public getAllCategories(){
 
     this.categoriesService.getAllCategories().subscribe(
