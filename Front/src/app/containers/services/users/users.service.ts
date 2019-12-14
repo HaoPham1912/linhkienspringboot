@@ -17,4 +17,7 @@ export class UsersService {
    registerUser(user: Object): Observable<Object> {
     return this.http.post(`${this.REGISTER_USER_URL}`, user);
   }
+ 
+
+
 }

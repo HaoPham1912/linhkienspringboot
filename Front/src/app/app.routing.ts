@@ -17,7 +17,11 @@ import { ManageComponent } from './views/user/manage/manage.component';
 import { InformationComponent } from './views/user/manage/information/information.component';
 import {OrdersComponent} from './views/user/manage/orders/orders.component';
 import { GuestLayoutComponent } from './containers/guest-layout/guest-layout.component';
+import { UsersComponent } from './views/admin/users/users.component';
 export const routes: Routes = [
+  
+ 
+  
   {
     path: '',
     redirectTo: 'admin',

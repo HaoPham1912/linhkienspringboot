@@ -58,6 +58,9 @@ import { OrdersComponent } from './views/user/manage/orders/orders.component';
 import { HeaderGuestComponent } from './views/guest/header-guest/header-guest.component';
 import { GuestLayoutComponent } from './containers/guest-layout/guest-layout.component';
 import { PaginationComponent } from './views/parts/pagination/pagination.component';
+import { ManageModule } from './views/admin/manage.module';
+import { CategoryPipe } from './containers/services/categories/category/category.pipe';
+
 
 
 @NgModule({
@@ -78,7 +81,8 @@ import { PaginationComponent } from './views/parts/pagination/pagination.compone
     UploadModule,
     HttpClientModule,
     NumberPickerModule,
-    FormsModule
+    FormsModule,
+    ManageModule
   ],
   declarations: [
     AppComponent,
@@ -102,7 +106,9 @@ import { PaginationComponent } from './views/parts/pagination/pagination.compone
     OrdersComponent,
     HeaderGuestComponent,
     GuestLayoutComponent,
-    PaginationComponent
+    PaginationComponent,
+    CategoryPipe,
+ 
   ],
   providers: [{
     provide: LocationStrategy,

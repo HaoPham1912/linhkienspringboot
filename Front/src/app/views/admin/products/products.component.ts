@@ -51,3 +51,4 @@ export class ProductsComponent implements OnInit{
     );
   }
 }
+12

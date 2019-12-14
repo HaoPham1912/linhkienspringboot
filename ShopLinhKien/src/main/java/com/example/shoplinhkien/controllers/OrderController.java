@@ -22,4 +22,5 @@ public class OrderController {
 	public List<OrderDTO> getOrderCus(@PathVariable("idcus") Long idcus){
 		return orderService.findOrderByCustomer(idcus);
 	}
+	
 }
